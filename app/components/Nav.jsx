@@ -15,28 +15,30 @@ var Nav = React.createClass({
     },
     render: function () {
         return (
-            <div className="top-bar">
-                <div className="top-bar-left">
-                    <ul className="menu">
-                        <li className="menu-text">React Weather App</li>
-                        <li><IndexLink to="/" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Get Weather</IndexLink></li>
-                        <li><Link to="/about" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>About</Link></li>
-                        <li><Link to="/examples" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Examples</Link></li>
-                    </ul>
-                </div>
-                <div className="top-bar-right">
-                    <form onSubmit={this.onSearch}>
+            <nav>
+                <div className="top-bar" id="weather-menu">
+                    <div className="top-bar-left">
                         <ul className="menu">
-                            <li>
-                                <input type="search" ref="search" placeholder="Search weather by city" />
-                            </li>
-                            <li>
-                                <input type="submit" className="button" value="Get Weather" />
-                            </li>
+                            <li className="menu-text">React Weather App</li>
+                            <li><IndexLink to="/" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Get Weather</IndexLink></li>
+                            <li><Link to="/about" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>About</Link></li>
+                            <li><Link to="/examples" activeClassName="active" activeStyle={{fontWeight: 'bold'}}>Examples</Link></li>
                         </ul>
-                    </form>
+                    </div>
+                    <div className="top-bar-right">
+                        <form onSubmit={this.onSearch}>
+                            <ul className="menu">
+                                <li>
+                                    <input type="search" ref="search" placeholder="Search weather by city" />
+                                </li>
+                                <li>
+                                    <input type="submit" className="button" value="Get Weather" />
+                                </li>
+                            </ul>
+                        </form>
+                    </div>
                 </div>
-            </div>
+            </nav>
         );
     }
 });
